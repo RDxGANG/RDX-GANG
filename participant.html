@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Teams</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General styles */
+        body {
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #121212;
+            position: relative;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Background images with fading effect */
+        .background-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Set behind content */
+            opacity: 0;
+            animation: backgroundChange 18s infinite;
+        }
+
+        .background-images img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: fadeInOut 18s infinite;
+        }
+
+        .background-images img:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .background-images img:nth-child(2) {
+            animation-delay: 8s;
+        }
+
+        .background-images img:nth-child(3) {
+            animation-delay: 12s;
+        }
+
+        /* Keyframes to control the fading in and out of the images */
+        @keyframes backgroundChange {
+            0%, 33.33% {
+                opacity: 1;
+            }
+            33.33%, 66.66% {
+                opacity: 1;
+            }
+            66.66%, 100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            33.33%, 66.66% {
+                opacity: 1;
+            }
+        }
+
+        /* Other styles */
+        .container {
+            margin-top: 50px;
+        }
+
+        button {
+            background-color: #ffc107;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #e0a800;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #222;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-height: 80%;
+            overflow-y: auto;
+            z-index: 1001;
+        }
+        .modal.active {
+            display: block;
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 1000;
+        }
+        .modal-overlay.active {
+            display: block;
+        }
+
+        /* VS section styles */
+        .vs-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .team {
+            width: 45%;
+            background: #333;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .team h3 {
+            margin: 0;
+            padding: 5px 0;
+            text-align: center;
+        }
+        .team ul {
+            list-style: none;
+            padding: 0;
+        }
+        .team ul li {
+            background: #444;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .vs {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 10px;
+            color: #ffc107;
+        }
+                      .scrolling-container {
+      width: 90%; /* Full width of the container */
+      height: 25px; /* Set a height for the container */
+      overflow: hidden; /* Hide overflowing content */
+      position: relative; /* Position relative to contain the text */
+      display: flex; /* Center content vertically */
+      align-items: center;
+    }
+
+    .scrolling-text {
+      color: gold;
+      position: absolute; /* Move independently within the container */
+      white-space: nowrap; /* Prevent text wrapping */
+      font-size: 1rem; /* Adjust font size for better visibility */
+      animation: scroll-right-to-left 10s linear infinite; /* Smooth scrolling */
+    }
+
+    @keyframes scroll-right-to-left {
+      from {
+        transform: translateX(70%); /* Start outside the right edge */
+      }
+      to {
+        transform: translateX(-100%); /* Move outside the left edge */
+      }
+    }
+    </style>
+</head>
+<body>
+    <!-- Background images for fading effect -->
+    <div class="background-images">
+        <img src="game2.jpg" alt="Background 1">
+        <img src="game3.jpg" alt="Background 2">
+        <img src="game4.jpg" alt="Background 3">
+    </div>
+
+    <!-- Home Button -->
+    <a href="index.html" style="text-decoration: none;">
+        <button style="background-color: #ffc107; color: #000; border: none; padding: 10px 20px; margin: 10px; cursor: pointer; font-size: 16px; border-radius: 5px;">Home</button>
+    </a>
+       <div class="scrolling-container">
+    <div class="scrolling-text"><h1 style="font-family: Georgia; color:gold;">Tournament Teams</h1></div>
+  </div>
+
+    <div class="container">
+        <button onclick="openModal('CS Teams (Solo)', csSoloMatches)">CS Solo</button>
+        <button onclick="openModal('CS Teams (Duo)', csDuoMatches)">CS Duo</button>
+        <button onclick="openModal('CS Teams (Squad)', csSquadMatches)">CS Squad</button>
+        <button onclick="openModal('BR Teams (Solo)', brSoloMatches)">BR Solo</button>
+        <button onclick="openModal('BR Teams (Duo)', brDuoMatches)">BR Duo</button>
+        <button onclick="openModal('BR Teams (Squad)', brSquadMatches)">BR Squad</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
+    <div class="modal" id="team-modal">
+        <h2 id="modal-title">Match Details</h2>
+        <div id="matches"></div>
+        <button onclick="closeModal()">Close</button>
+    </div>
+
+    <script>
+        // Match data (example)
+        const csSoloMatches = [
+            { team1: ["Player 1"], team2: ["Player 2 "] },
+            { team1: ["Player 3"], team2: ["Player 4"] }
+        ];
+        const csDuoMatches = [
+            { team1: ["Player 1", "Player 2"], team2: ["Player 3", "Player 4"] },
+            { team1: ["Player 5", "Player 6"], team2: ["Player 7", "Player 8"] }
+        ];
+        const csSquadMatches = [
+            { team1: ["Player 1", "Player 2", "Player 3", "Player 4"], team2: ["Player 5", "Player 6", "Player 7", "Player 8"] }
+        ];
+        const brSoloMatches = [
+            { team1: ["Player A"], team2: ["Player B"] },
+            { team1: ["Player C"], team2: ["Player D"] }
+        ];
+        const brDuoMatches = [
+            { team1: ["Player A", "Player B"], team2: ["Player C", "Player D"] }
+        ];
+        const brSquadMatches = [
+            { team1: ["Player A", "Player B", "Player C", "Player D"], team2: ["Player E", "Player F", "Player G", "Player H"] }
+        ];
+
+        // Function to open the modal and display matches
+        function openModal(title, matches) {
+            document.getElementById('modal-title').textContent = title;
+            const matchesContainer = document.getElementById('matches');
+            matchesContainer.innerHTML = '';
+
+            matches.forEach(match => {
+                const matchDiv = document.createElement('div');
+                matchDiv.classList.add('vs-container');
+
+                // Team 1
+                const team1Div = document.createElement('div');
+                team1Div.classList.add('team');
+                team1Div.innerHTML = `<h3>Team 1</h3><ul>${match.team1.map(player => `<li>${player}</li>`).join('')}</ul>`;
+
+                // VS Label
+                const vsDiv = document.createElement('div');
+                vsDiv.classList.add('vs');
+                vsDiv.textContent = "VS";
+
+                // Team 2
+                const team2Div = document.createElement('div');
+                team2Div.classList.add('team');
+                team2Div.innerHTML = `<h3>Team 2</h3><ul>${match.team2.map(player => `<li>${player}</li>`).join('')}</ul>`;
+
+                // Append to match container
+                matchDiv.appendChild(team1Div);
+                matchDiv.appendChild(vsDiv);
+                matchDiv.appendChild(team2Div);
+
+                matchesContainer.appendChild(matchDiv);
+            });
+
+            document.getElementById('team-modal').classList.add('active');
+            document.getElementById('modal-overlay').classList.add('active');
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById('team-modal').classList.remove('active');
+            document.getElementById('modal-overlay').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

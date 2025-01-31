@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Details</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Background images with fading effect */
+        .background-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Set behind content */
+            opacity: 0;
+            animation: backgroundChange 18s infinite;
+        }
+
+        .background-images img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: fadeInOut 18s infinite;
+        }
+
+        .background-images img:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .background-images img:nth-child(2) {
+            animation-delay: 8s;
+        }
+
+        .background-images img:nth-child(3) {
+            animation-delay: 12s;
+        }
+
+        /* Keyframes to control the fading in and out of the images */
+        @keyframes backgroundChange {
+            0%, 33.33% {
+                opacity: 1;
+            }
+            33.33%, 66.66% {
+                opacity: 1;
+            }
+            66.66%, 100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            33.33%, 66.66% {
+                opacity: 1;
+            }
+        }
+
+        /* Navigation styling */
+        nav {
+            margin: 20px 0;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffcc00;
+            padding: 10px 20px;
+            background: #333;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+            border: 2px solid #ffcc00;
+        }
+
+        nav a:hover {
+            background: #555;
+        }
+
+        .scrolling-container {
+            width: 90%; /* Full width of the container */
+            height: 22px; /* Set a height for the container */
+            overflow: hidden; /* Hide overflowing content */
+            position: relative; /* Position relative to contain the text */
+            display: flex; /* Center content vertically */
+            align-items: center;
+            margin: 20px 0;
+            z-index: 1;
+        }
+
+        .scrolling-text {
+            color: gold;
+            position: absolute; /* Move independently within the container */
+            white-space: nowrap; /* Prevent text wrapping */
+            font-size: 1.2rem; /* Adjust font size for better visibility */
+            animation: scroll-right-to-left 20s linear infinite; /* Smooth scrolling */
+            font-family: Georgia;
+        }
+
+        @keyframes scroll-right-to-left {
+            from {
+                transform: translateX(30%); /* Start outside the right edge */
+            }
+            to {
+                transform: translateX(-100%); /* Move outside the left edge */
+            }
+        }
+
+        .team-container {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            max-height: 70vh;
+            overflow-y: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-container h2 {
+            color: #ffcc00;
+        }
+
+        .team-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.5rem;
+            color: #ffcc00;
+        }
+
+        .team-list li {
+            margin: 10px 0;
+        }
+
+        /* Add styles for the tournament options to match the nav bar buttons */
+        .team-list a {
+            display: inline-block;
+            text-decoration: none;
+            color: #ffcc00;
+            padding: 10px 20px;
+            background: #333;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+            border: 2px solid #ffcc00;
+            margin-top: 10px;
+        }
+
+        .team-list a:hover {
+            background: #555;
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background images for fading effect -->
+    <div class="background-images">
+        <img src="game2.jpg" alt="Background 1">
+        <img src="game3.jpg" alt="Background 2">
+        <img src="game4.jpg" alt="Background 3">
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+       <a href="https://wa.me/+8801732013538">admin WhatsApp</a>
+    </nav>
+
+    <!-- Scrolling text container -->
+    <div class="scrolling-container">
+        <div class="scrolling-text">Tournament rules and participant team member and their name will be displayed. Match results included</div>
+    </div>
+
+    <!-- Tournament Details Section -->
+    <div class="team-container">
+        <h2>ᏒᴅxܔGANGツ™ Tournament</h2>
+        <ul class="team-list">
+            <li><a href="CSdetails.html">CS Tournament Details</a></li>
+            <li><a href="BRdetails.html">BR Tournament Details</a></li>
+            <li><a href="participant.html">Tournament Participants</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

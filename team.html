@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guild Members</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow : hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        /* Background images with fading effect */
+        .background-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Set behind content */
+            opacity: 0;
+            animation: backgroundChange 18s infinite;
+        }
+
+        .background-images img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: fadeInOut 18s infinite;
+        }
+
+        .background-images img:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .background-images img:nth-child(2) {
+            animation-delay: 8s;
+        }
+
+        .background-images img:nth-child(3) {
+            animation-delay: 12s;
+        }
+
+        /* Keyframes to control the fading in and out of the images */
+        @keyframes backgroundChange {
+            0%, 33.33% {
+                opacity: 1;
+            }
+            33.33%, 66.66% {
+                opacity: 1;
+            }
+            66.66%, 100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            33.33%, 66.66% {
+                opacity: 1;
+            }
+        }
+
+        /* Navigation and styling */
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffcc00;
+            padding: 10px 20px;
+            background: #333;
+            border-radius: 5px;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #555;
+        }
+
+        .team-container {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .team-container h2 {
+            color: #ffcc00;
+        }
+
+        .team-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.5rem;
+            color: #ffcc00;
+        }
+
+        .team-list li {
+            margin: 10px 0;
+        }
+       .scrolling-container {
+      width: 90%; /* Full width of the container */
+      height: 22px; /* Set a height for the container */
+      overflow: hidden; /* Hide overflowing content */
+      position: relative; /* Position relative to contain the text */
+      display: flex; /* Center content vertically */
+      align-items: center;
+    }
+
+    .scrolling-text {
+      color: gold;
+      position: absolute; /* Move independently within the container */
+      white-space: nowrap; /* Prevent text wrapping */
+      font-size: 1.2rem; /* Adjust font size for better visibility */
+      animation: scroll-right-to-left 10s linear infinite; /* Smooth scrolling */
+    }
+
+    @keyframes scroll-right-to-left {
+      from {
+        transform: translateX(70%); /* Start outside the right edge */
+      }
+      to {
+        transform: translateX(-100%); /* Move outside the left edge */
+      }
+    }
+    </style>
+</head>
+<body>
+    <!-- Background images for fading effect -->
+    <div class="background-images">
+        <img src="game2.jpg" alt="Background 1">
+        <img src="game3.jpg" alt="Background 2">
+        <img src="game4.jpg" alt="Background 3">
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="https://wa.me/+8801732013538">admin WhatsApp</a>
+    </nav>
+
+    <!-- Team container -->
+    <div class="team-container">
+      <div class="scrolling-container">
+    <div class="scrolling-text"><h2>ᏒᴅxܔGANGツ™ Members</h2></div>
+  </div>
+
+        <ul class="team-list">
+            <li>1. тωㅤ✓ʟᴜᴄɪꜰᴇʀ么 (Dev)</li>
+            <li>2. ASܔAMINUL★࿐™ (leader)</li>
+            <li>3. Do or ®Die</li>
+            <li>4. Rs)(Shawon</li>
+            <li>5. Mr. Rafin yt</li>
+            <li>6. OP★Maruf-/YT</li>
+            <li>7. Reed3le</li>
+            <li>8. Ìmran kìng </li>
+            <li>9. রিদওয়ান 500</li>
+            <li>10. ϻ❽Ɲ ᴳᴼᴰ ⸙</li>
+            <li>11. GW TAMIM</li>
+            <li>12. MR BANU</li>
+            <li>13. RONOK vai</li>
+            <li>14. Unknown 69</li>
+            <li>15. atikvai5.0</li>
+            <li>16. THE HISAM</li>
+            <li>17. Lx.HRIDOY_YT</li>
+            <li>18. T13 ADNAN</li>
+            <li>19. LITON</li>
+            <li>20. TBIMAN</li>
+            <li>21. PNC Rabbi</li>
+            <li>22. AF®ASIKYT</li>
+            <li>23. RDX Shakib</li>
+            <li>24. Mr~Nesar~vai</li>
+            <li>25. SAVE MARUF</li>
+            <li>26. BD SAWON</li>
+            <li>27. BCW . MURSID</li>
+            <li>28. SIGMA STAR</li>
+            <li>29. its kabbo</li>
+            <li>30. DuXx_Zz_?.0</li>
+            <li>31. ¿ XENZO</li>
+            <li>32. jfjchgn</li>
+            <li>33. SS.Gaming</li>
+            <li>34. Apex7C0&B</li>
+            <li>35. RS SHOHIDUL</li>
+            <li>36. RS HAMIM</li>
+            <li>37. md Rifat</li>
+            <li>38. pro sonjoydj</li>
+            <li>39. UN
+            .SOWRPV</li>
+            <li>40. sobuj.hakar</li>
+            <li>41. Seas2o7K4n3</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

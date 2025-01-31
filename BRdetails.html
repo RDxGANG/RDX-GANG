@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR Tournament Details</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        /* Combine the neon gradient and gaming photo */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.6), rgba(0, 240, 255, 0.6), rgba(127, 0, 255, 0.6)),
+                        url('game3.jpg') center center/cover; /* Adjust with your image */
+            background-blend-mode: overlay; /* Blends the image and gradient */
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('sparkles.png') repeat;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+            padding: 20px 0;
+            color: #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffcc00;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .btn {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+        }
+
+        .details {
+            display: none;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .details h3 {
+            color: #ffcc00;
+        }
+
+        .details p, .details ul {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+      .scrolling-container {
+      width: 100%; /* Full width of the container */
+      height: 20px; /* Set a height for the container */
+      overflow: hidden; /* Hide overflowing content */
+      position: relative; /* Position relative to contain the text */
+      display: flex; /* Center content vertically */
+      align-items: center;
+    }
+
+    .scrolling-text {
+      color: goldenrod;
+      position: absolute; /* Move independently within the container */
+      white-space: nowrap; /* Prevent text wrapping */
+      font-size: 1.2rem; /* Adjust font size for better visibility */
+      animation: scroll-right-to-left 10s linear infinite; /* Smooth scrolling */
+    }
+
+    @keyframes scroll-right-to-left {
+      from {
+        transform: translateX(70%); /* Start outside the right edge */
+      }
+      to {
+        transform: translateX(-100%); /* Move outside the left edge */
+      }
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BR Tournament Details</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="CSdetails.html">CS Tournament</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <button class="btn" onclick="showDetails('squad')">Squad vs Squad</button>
+        <button class="btn" onclick="showDetails('solo')">Solo Matches</button>
+        <button class="btn" onclick="showDetails('Duo')">Duo Matches</button>
+    </div>
+
+    <div id="squad" class="details">
+        <h3>BR tournament 2k25<br>
+        4 vs 4 Details</h3>
+        <p> Entry Fee -
+            4 players- 40tk-<br>
+• Per person 10Tk<br>
+ 1st prize: 1 weekly<br> 
+2nd prize: 1 weekly<br>
+3rd prize: 115 Diamond<br>
+4th prize: 75 Diamond </p>
+</div>
+
+    <div id="solo" class="details">
+        <h3>Solo Matches Details<br>1 vs 1</h3>
+        <p> Entry fee -
+        1 player= 5tk<br>
+1st prize: 190 Diamond<br>
+2nd prize: 115 Diamond
+          
+        </p>
+    </div>
+
+    <div id="Duo" class="details">
+   <h3>Duo Matches Details<br>2 vs 2</h3>    
+     <div class="scrolling-container">
+    <div class="scrolling-text">Tournament will not be held until 48 player participates</div>
+  </div>
+<p>Entry fee- Per player 5tk/1tk<br>
+• 1st prize:190 Diamond or <br> 1st:1 weekly+165 Diamond<br>
+• 2nd prize:115 Diamond || 2nd:1 weekly
+</p>
+    </div>
+
+    <script>
+        function showDetails(id) {
+            // Hide all details
+            document.querySelectorAll('.details').forEach(detail => {
+                detail.style.display = 'none';
+            });
+            // Show selected details
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
