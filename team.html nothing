@@ -83,6 +83,7 @@
         }
 
         nav a {
+            border: 2px solid gold;
             text-decoration: none;
             color: #ffcc00;
             padding: 10px 20px;
